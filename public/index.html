@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat + Media + Video Call</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Realtime Chat App</h1>
+        <p>Text chat, media sharing, and 1:1 video call.</p>
+      </header>
+
+      <section class="video-panel">
+        <video id="localVideo" autoplay muted playsinline></video>
+        <video id="remoteVideo" autoplay playsinline></video>
+      </section>
+
+      <section class="controls">
+        <button id="startCallBtn">Start Video Call</button>
+        <button id="endCallBtn" disabled>End Call</button>
+      </section>
+
+      <section id="messages" class="messages"></section>
+
+      <form id="chatForm" class="composer">
+        <input id="messageInput" type="text" placeholder="Type a message..." required />
+        <button type="submit">Send</button>
+      </form>
+
+      <form id="mediaForm" class="composer media-composer">
+        <input id="mediaInput" type="file" accept="image/*,video/*,audio/*" required />
+        <button type="submit">Send Media</button>
+      </form>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
